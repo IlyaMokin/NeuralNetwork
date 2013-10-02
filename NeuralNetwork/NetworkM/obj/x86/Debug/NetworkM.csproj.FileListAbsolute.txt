@@ -1,0 +1,73 @@
+E:\Универ\2012-2013\Нейронки\лаба3_main\NetworkM\NetworkM\bin\Debug\NetworkM.exe
+E:\Универ\2012-2013\Нейронки\лаба3_main\NetworkM\NetworkM\bin\Debug\NetworkM.pdb
+E:\Универ\2012-2013\Нейронки\лаба3_main\NetworkM\NetworkM\obj\x86\Debug\NetworkM.exe
+E:\Универ\2012-2013\Нейронки\лаба3_main\NetworkM\NetworkM\obj\x86\Debug\NetworkM.pdb
+e:\Универ\2012-2013\Нейронки\лаба3_main\NetworkM\NetworkM\obj\x86\Debug\NetworkM.csprojResolveAssemblyReference.cache
+e:\Универ\2012-2013\Нейронки\лаба4\NetworkM\NetworkM\obj\x86\Debug\NetworkM.exe
+e:\Универ\2012-2013\Нейронки\лаба4\NetworkM\NetworkM\obj\x86\Debug\NetworkM.pdb
+e:\Универ\2012-2013\Нейронки\лаба4\NetworkM\NetworkM\bin\Debug\NetworkM.exe
+e:\Универ\2012-2013\Нейронки\лаба4\NetworkM\NetworkM\bin\Debug\NetworkM.pdb
+e:\Универ\2012-2013\Нейронки\лаба4\NetworkM\NetworkM\obj\x86\Debug\ResolveAssemblyReference.cache
+e:\Универ\2012-2013\Нейронки\лаба5\NetworkM\NetworkM\obj\x86\Debug\NetworkM.exe
+e:\Универ\2012-2013\Нейронки\лаба5\NetworkM\NetworkM\obj\x86\Debug\NetworkM.pdb
+e:\Универ\2012-2013\Нейронки\лаба5\NetworkM\NetworkM\bin\Debug\NetworkM.exe
+e:\Универ\2012-2013\Нейронки\лаба5\NetworkM\NetworkM\bin\Debug\NetworkM.pdb
+e:\Универ\2012-2013\Нейронки\лаба5\NetworkM\NetworkM\obj\x86\Debug\ResolveAssemblyReference.cache
+e:\Универ\2012-2013\Нейронки\лаба5\NetworkM\NetworkM\obj\x86\Debug\NetworkM.ResourceImage.resources
+e:\Универ\2012-2013\Нейронки\лаба5\NetworkM\NetworkM\obj\x86\Debug\GenerateResource.read.1.tlog
+e:\Универ\2012-2013\Нейронки\лаба5\NetworkM\NetworkM\obj\x86\Debug\GenerateResource.write.1.tlog
+e:\Универ\2012-2013\курсач\NetworkM\NetworkM\obj\x86\Debug\NetworkM.exe
+e:\Универ\2012-2013\курсач\NetworkM\NetworkM\obj\x86\Debug\NetworkM.pdb
+e:\Универ\2012-2013\курсач\NetworkM\NetworkM\bin\Debug\NetworkM.exe.config
+e:\Универ\2012-2013\курсач\NetworkM\NetworkM\bin\Debug\NetworkM.exe
+e:\Универ\2012-2013\курсач\NetworkM\NetworkM\bin\Debug\NetworkM.pdb
+e:\Универ\2012-2013\курсач\NetworkM\NetworkM\obj\x86\Debug\ResolveAssemblyReference.cache
+f:\курсач\NetworkM\NetworkM\bin\Debug\NetworkM.exe.config
+f:\курсач\NetworkM\NetworkM\obj\x86\Debug\NetworkM.exe
+f:\курсач\NetworkM\NetworkM\obj\x86\Debug\NetworkM.pdb
+f:\курсач\NetworkM\NetworkM\bin\Debug\NetworkM.exe
+f:\курсач\NetworkM\NetworkM\bin\Debug\NetworkM.pdb
+f:\курсач\NetworkM\NetworkM\obj\x86\Debug\ResolveAssemblyReference.cache
+d:\WorkFolder\TextFiner\Program - Copy\NetworkM\bin\Debug\NetworkM.exe.config
+d:\WorkFolder\TextFiner\Program - Copy\NetworkM\obj\x86\Debug\NetworkM.exe
+d:\WorkFolder\TextFiner\Program - Copy\NetworkM\obj\x86\Debug\NetworkM.pdb
+d:\WorkFolder\TextFiner\Program - Copy\NetworkM\bin\Debug\NetworkM.exe
+d:\WorkFolder\TextFiner\Program - Copy\NetworkM\bin\Debug\NetworkM.pdb
+D:\WorkFolder\TextFiner\Program - Copy\NetworkM\obj\x86\Debug\NetworkM.csprojResolveAssemblyReference.cache
+d:\WorkFolder\Нейронные сети\NetworkM\NetworkM\bin\Debug\NetworkM.dll
+d:\WorkFolder\Нейронные сети\NetworkM\NetworkM\bin\Debug\NetworkM.pdb
+d:\WorkFolder\Нейронные сети\NetworkM\NetworkM\obj\x86\Debug\NetworkM.csprojResolveAssemblyReference.cache
+d:\WorkFolder\Нейронные сети\NetworkM\NetworkM\obj\x86\Debug\NetworkM.dll
+d:\WorkFolder\Нейронные сети\NetworkM\NetworkM\obj\x86\Debug\NetworkM.pdb
+d:\Нейронные сети\NetworkM_backup\NetworkM\bin\Debug\NetworkM.dll
+d:\Нейронные сети\NetworkM_backup\NetworkM\bin\Debug\NetworkM.pdb
+d:\Нейронные сети\NetworkM_backup\NetworkM\obj\x86\Debug\NetworkM.csprojResolveAssemblyReference.cache
+d:\Нейронные сети\NetworkM_backup\NetworkM\obj\x86\Debug\NetworkM.dll
+d:\Нейронные сети\NetworkM_backup\NetworkM\obj\x86\Debug\NetworkM.pdb
+f:\Нейронные сети\NetworkM_backup\NetworkM\bin\Debug\NetworkM.dll
+f:\Нейронные сети\NetworkM_backup\NetworkM\bin\Debug\NetworkM.pdb
+f:\Нейронные сети\NetworkM_backup\NetworkM\obj\x86\Debug\NetworkM.csprojResolveAssemblyReference.cache
+f:\Нейронные сети\NetworkM_backup\NetworkM\obj\x86\Debug\NetworkM.dll
+f:\Нейронные сети\NetworkM_backup\NetworkM\obj\x86\Debug\NetworkM.pdb
+D:\Нейронные сети\NetworkM\NetworkM\bin\Debug\NetworkM.dll
+D:\Нейронные сети\NetworkM\NetworkM\bin\Debug\NetworkM.pdb
+D:\Нейронные сети\NetworkM\NetworkM\bin\Debug\MathNet.Numerics.dll
+D:\Нейронные сети\NetworkM\NetworkM\bin\Debug\MathNet.Numerics.IO.dll
+D:\Нейронные сети\NetworkM\NetworkM\bin\Debug\MathNet.Numerics.pdb
+D:\Нейронные сети\NetworkM\NetworkM\bin\Debug\MathNet.Numerics.xml
+D:\Нейронные сети\NetworkM\NetworkM\bin\Debug\MathNet.Numerics.IO.pdb
+D:\Нейронные сети\NetworkM\NetworkM\bin\Debug\MathNet.Numerics.IO.xml
+D:\Нейронные сети\NetworkM\NetworkM\obj\x86\Debug\NetworkM.csprojResolveAssemblyReference.cache
+D:\Нейронные сети\NetworkM\NetworkM\obj\x86\Debug\NetworkM.dll
+D:\Нейронные сети\NetworkM\NetworkM\obj\x86\Debug\NetworkM.pdb
+I:\Нейронные сети\NetworkM\NetworkM\bin\Debug\NetworkM.dll
+I:\Нейронные сети\NetworkM\NetworkM\bin\Debug\NetworkM.pdb
+I:\Нейронные сети\NetworkM\NetworkM\bin\Debug\MathNet.Numerics.dll
+I:\Нейронные сети\NetworkM\NetworkM\bin\Debug\MathNet.Numerics.IO.dll
+I:\Нейронные сети\NetworkM\NetworkM\bin\Debug\MathNet.Numerics.pdb
+I:\Нейронные сети\NetworkM\NetworkM\bin\Debug\MathNet.Numerics.xml
+I:\Нейронные сети\NetworkM\NetworkM\bin\Debug\MathNet.Numerics.IO.pdb
+I:\Нейронные сети\NetworkM\NetworkM\bin\Debug\MathNet.Numerics.IO.xml
+I:\Нейронные сети\NetworkM\NetworkM\obj\x86\Debug\NetworkM.csprojResolveAssemblyReference.cache
+I:\Нейронные сети\NetworkM\NetworkM\obj\x86\Debug\NetworkM.dll
+I:\Нейронные сети\NetworkM\NetworkM\obj\x86\Debug\NetworkM.pdb

@@ -1,0 +1,33 @@
+E:\Универ\2012-2013\курсач\NetworkM\NetworkM\bin\Release\NetworkM.exe.config
+E:\Универ\2012-2013\курсач\NetworkM\NetworkM\bin\Release\NetworkM.exe
+E:\Универ\2012-2013\курсач\NetworkM\NetworkM\bin\Release\NetworkM.pdb
+E:\Универ\2012-2013\курсач\NetworkM\NetworkM\obj\x86\Release\ResolveAssemblyReference.cache
+E:\Универ\2012-2013\курсач\NetworkM\NetworkM\obj\x86\Release\NetworkM.exe
+E:\Универ\2012-2013\курсач\NetworkM\NetworkM\obj\x86\Release\NetworkM.pdb
+f:\курсач\NetworkM\NetworkM\bin\Release\NetworkM.exe.config
+f:\курсач\NetworkM\NetworkM\obj\x86\Release\NetworkM.exe
+f:\курсач\NetworkM\NetworkM\obj\x86\Release\NetworkM.pdb
+f:\курсач\NetworkM\NetworkM\bin\Release\NetworkM.exe
+f:\курсач\NetworkM\NetworkM\bin\Release\NetworkM.pdb
+f:\курсач\NetworkM\NetworkM\obj\x86\Release\ResolveAssemblyReference.cache
+d:\WorkFolder\курсач12.12\NetworkM\NetworkM\bin\Release\NetworkM.exe.config
+d:\WorkFolder\курсач12.12\NetworkM\NetworkM\bin\Release\NetworkM.exe
+d:\WorkFolder\курсач12.12\NetworkM\NetworkM\bin\Release\NetworkM.pdb
+d:\WorkFolder\курсач12.12\NetworkM\NetworkM\obj\x86\Release\ResolveAssemblyReference.cache
+d:\WorkFolder\курсач12.12\NetworkM\NetworkM\obj\x86\Release\NetworkM.exe
+d:\WorkFolder\курсач12.12\NetworkM\NetworkM\obj\x86\Release\NetworkM.pdb
+d:\WorkFolder\курсач12.12\Program\NetworkM\bin\Release\NetworkM.exe.config
+d:\WorkFolder\курсач12.12\Program\NetworkM\bin\Release\NetworkM.exe
+d:\WorkFolder\курсач12.12\Program\NetworkM\bin\Release\NetworkM.pdb
+d:\WorkFolder\курсач12.12\Program\NetworkM\obj\x86\Release\ResolveAssemblyReference.cache
+d:\WorkFolder\курсач12.12\Program\NetworkM\obj\x86\Release\NetworkM.exe
+d:\WorkFolder\курсач12.12\Program\NetworkM\obj\x86\Release\NetworkM.pdb
+d:\WorkFolder\TextFiner\Program\NetworkM\bin\Release\NetworkM.exe.config
+d:\WorkFolder\TextFiner\Program\NetworkM\obj\x86\Release\NetworkM.exe
+d:\WorkFolder\TextFiner\Program\NetworkM\obj\x86\Release\NetworkM.pdb
+d:\WorkFolder\TextFiner\Program - Copy\NetworkM\bin\Release\NetworkM.exe.config
+d:\WorkFolder\TextFiner\Program - Copy\NetworkM\obj\x86\Release\NetworkM.exe
+d:\WorkFolder\TextFiner\Program - Copy\NetworkM\obj\x86\Release\NetworkM.pdb
+d:\WorkFolder\TextFiner\Program - Copy\NetworkM\bin\Release\NetworkM.exe
+d:\WorkFolder\TextFiner\Program - Copy\NetworkM\bin\Release\NetworkM.pdb
+d:\WorkFolder\TextFiner\Program - Copy\NetworkM\obj\x86\Release\NetworkM.csprojResolveAssemblyReference.cache
