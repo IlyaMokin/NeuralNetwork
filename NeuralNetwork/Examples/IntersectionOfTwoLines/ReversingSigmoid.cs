@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace NetworkM.ActivationFunctions
+namespace IntersectionOfTwoLines
 {
-	public class Sigmoid : ActivationFunction
+	class ReversingSigmoid : NetworkM.ActivationFunctions.Sigmoid
 	{
 		public override double F(double s)
 		{
-			return 1d / (1d + Math.Exp(-s));
+			return -base.F(s);
 		}
 
 		public override double DF(double s)
 		{
-			return Math.Exp(-s) / Math.Pow(1 + Math.Exp(-s), 2);
+			return -base.DF(s);
 		}
 	}
 }

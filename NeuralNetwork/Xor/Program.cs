@@ -1,4 +1,4 @@
-﻿//Обучение сети на xor c одним скрытым слоем
+﻿//Обучение сети на xor без скрытых слоев. Обучается не с первого раза!
 using NetworkM;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace XorWithOneHiddenLayer
+namespace XorWithoutHiddenLayer
 {
 	class Program
 	{
@@ -26,21 +26,20 @@ namespace XorWithOneHiddenLayer
 				new double[]{0}
 			};
 
-			//NeuroNetwork.ActivationFunctions.Add(new NetworkM.ActivationFunctions.Sin()); //Иначе при инициализации сеть не будет знать о существовании такой функции
+			//NeuroNetwork.ActivationFunctions.Add(new ThresholdXorFunction()); //Иначе при инициализации сеть не будет знать о существовании такой функции
 			//NeuroNetwork network = NeuroNetwork.Izialize("result.json");
 
 			var network = new NeuroNetwork(
 				new LayerInfo() { CountNeuronsInLayer = 2 },
-				new LayerInfo() { CountNeuronsInLayer = 2, ActivationFunction = new NetworkM.ActivationFunctions.Sigmoid() },
-				new LayerInfo() { CountNeuronsInLayer = 1, ActivationFunction = new NetworkM.ActivationFunctions.Sin() });
+				new LayerInfo() { CountNeuronsInLayer = 1, ActivationFunction = new ThresholdXorFunction() });
 
-			var teacher = new NetworkM.Teachers.Backpropagation.GradientDescent(network);
-			teacher.Alpha = 0.15;
+			var teacher = new NetworkM.Teachers.Backpropagation.RosenblattMethod(network);
+			teacher.Alpha = 1e-8;
 			double err = 0;
 			do
 			{
 				err = teacher.RunEpoch(input, output);
-				if (teacher.IterationCounter % 1000 == 0)
+				if (teacher.IterationCounter % 10000 == 0)
 				{
 					Console.WriteLine(err);
 				}

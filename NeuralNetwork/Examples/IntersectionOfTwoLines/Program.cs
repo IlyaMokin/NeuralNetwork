@@ -126,24 +126,25 @@ namespace IntersectionOfTwoLines
 			};
 			#endregion sample
 
+			NeuroNetwork.ActivationFunctions.Add(new ReversingSigmoid());
+
 			var network = new NeuroNetwork(
 				new LayerInfo() { CountNeuronsInLayer = 2 },
-				new LayerInfo() { CountNeuronsInLayer = 7, ActivationFunction = new NetworkM.ActivationFunctions.BipolarSigmoid() },
-				new LayerInfo() { CountNeuronsInLayer = 4, ActivationFunction = new NetworkM.ActivationFunctions.BipolarSigmoid() },
-				new LayerInfo() { CountNeuronsInLayer = 1, ActivationFunction = new NetworkM.ActivationFunctions.Sigmoid() });
+				new LayerInfo() { CountNeuronsInLayer = 2, ActivationFunction = new NetworkM.ActivationFunctions.Sigmoid() },
+				new LayerInfo() { CountNeuronsInLayer = 1, ActivationFunction = new ThresholdXorFunction() });
 
 			//network = NeuroNetwork.Izialize("result.json");
-			var teacher = new GradientDescent(network);
+			var teacher = new RosenblattMethod(network);
 
 			var err = 0.0d;
 			var e = 10d;
 
-			teacher.Alpha = 0.0001;
+			teacher.Alpha = 1e-8;
 			do
 			{
 				err = teacher.RunEpoch(inp, outp);
 
-				if (teacher.IterationCounter % 500 == 0)
+				if (teacher.IterationCounter % 1000 == 0)
 				{
 					Console.WriteLine(err);
 				}

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleGenetic", "Examples\S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XorWithOneHiddenLayer", "Examples\XorWithOneHiddenLayer\XorWithOneHiddenLayer.csproj", "{37CD10F1-806C-45B2-AD7C-73A943B783A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XorWithoutHiddenLayer", "Xor\XorWithoutHiddenLayer.csproj", "{65629D6A-6864-44E8-9C76-04687D94DB8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,16 @@ Global
 		{37CD10F1-806C-45B2-AD7C-73A943B783A7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{37CD10F1-806C-45B2-AD7C-73A943B783A7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{37CD10F1-806C-45B2-AD7C-73A943B783A7}.Release|x86.ActiveCfg = Release|Any CPU
+		{65629D6A-6864-44E8-9C76-04687D94DB8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65629D6A-6864-44E8-9C76-04687D94DB8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65629D6A-6864-44E8-9C76-04687D94DB8F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{65629D6A-6864-44E8-9C76-04687D94DB8F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{65629D6A-6864-44E8-9C76-04687D94DB8F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{65629D6A-6864-44E8-9C76-04687D94DB8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65629D6A-6864-44E8-9C76-04687D94DB8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65629D6A-6864-44E8-9C76-04687D94DB8F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{65629D6A-6864-44E8-9C76-04687D94DB8F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{65629D6A-6864-44E8-9C76-04687D94DB8F}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,5 +94,6 @@ Global
 		{03D90C4F-57C6-4E45-8F67-793B3C9716E7} = {0C41B3DD-92CB-4C2B-9B52-9E9DA49B59B6}
 		{B0168225-B5C6-4B6A-968E-834C614DDC3E} = {0C41B3DD-92CB-4C2B-9B52-9E9DA49B59B6}
 		{37CD10F1-806C-45B2-AD7C-73A943B783A7} = {0C41B3DD-92CB-4C2B-9B52-9E9DA49B59B6}
+		{65629D6A-6864-44E8-9C76-04687D94DB8F} = {0C41B3DD-92CB-4C2B-9B52-9E9DA49B59B6}
 	EndGlobalSection
 EndGlobal
