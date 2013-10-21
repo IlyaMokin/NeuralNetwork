@@ -137,14 +137,14 @@ namespace IntersectionOfTwoLines
 			var teacher = new RosenblattMethod(network);
 
 			var err = 0.0d;
-			var e = 10d;
+			var e = 0d;
 
 			teacher.Alpha = 1e-8;
 			do
 			{
 				err = teacher.RunEpoch(inp, outp);
 
-				if (teacher.IterationCounter % 1000 == 0)
+				if (teacher.IterationCounter % 1000== 0)
 				{
 					Console.WriteLine(err);
 				}
