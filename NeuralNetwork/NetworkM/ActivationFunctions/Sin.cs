@@ -7,10 +7,9 @@ namespace NetworkM.ActivationFunctions
 {
 	public class Sin : ActivationFunction
 	{
-		private double a;
 		public override double F(double s)
 		{
-			return Math.Sin(a*s);
+			return Math.Sin(s);
 		}
 
 		public override double DF(double s)

@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XorWithoutHiddenLayer", "Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zip", "Zip\Zip.csproj", "{EF254192-9538-4F34-8871-AF33562AB504}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{3E9871E8-E9D0-4C67-8C0C-6C85D766BD94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,16 @@ Global
 		{EF254192-9538-4F34-8871-AF33562AB504}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{EF254192-9538-4F34-8871-AF33562AB504}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{EF254192-9538-4F34-8871-AF33562AB504}.Release|x86.ActiveCfg = Release|Any CPU
+		{3E9871E8-E9D0-4C67-8C0C-6C85D766BD94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E9871E8-E9D0-4C67-8C0C-6C85D766BD94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E9871E8-E9D0-4C67-8C0C-6C85D766BD94}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3E9871E8-E9D0-4C67-8C0C-6C85D766BD94}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3E9871E8-E9D0-4C67-8C0C-6C85D766BD94}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3E9871E8-E9D0-4C67-8C0C-6C85D766BD94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E9871E8-E9D0-4C67-8C0C-6C85D766BD94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E9871E8-E9D0-4C67-8C0C-6C85D766BD94}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3E9871E8-E9D0-4C67-8C0C-6C85D766BD94}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3E9871E8-E9D0-4C67-8C0C-6C85D766BD94}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
