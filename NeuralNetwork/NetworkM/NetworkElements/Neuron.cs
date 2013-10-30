@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace NetworkM
+namespace NetworkM.NetworkElements
 {
 	public class Neuron
 	{
@@ -14,12 +14,10 @@ namespace NetworkM
 		{
 			foreach (var previewLayerNeuron in previewLayer)
 			{
-				double w = 1d / (rand.Next(10) + 1d);
-				var setter = new Action<double>((double x) => { w = x; });
-				var getter = new Func<double>(() => { return w; });
+				var sharedW = new SharedValue<double>(1d / (rand.Next(10) + 1d));
 
-				previewLayerNeuron.OutputLinks.Add(new Link(this, getter, setter));
-				this.InputLinks.Add(new Link(previewLayerNeuron, getter, setter));
+				previewLayerNeuron.OutputLinks.Add(new Link(this, sharedW));
+				this.InputLinks.Add(new Link(previewLayerNeuron, sharedW));
 			}
 			ActivationFunc = func;
 		}

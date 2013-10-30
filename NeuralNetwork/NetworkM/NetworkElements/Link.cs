@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace NetworkM
+namespace NetworkM.NetworkElements
 {
 	public class Link
 	{
-		private Func<double> _WGet;
-		private Action<double> _WSet;
-		public Link(Neuron neuron, Func<double> wGet, Action<double> wSet)
+		private SharedValue<double> _w;
+		public Link(Neuron neuron, SharedValue<double> sharedValue)
 		{
-			_WGet = wGet;
-			_WSet = wSet;
+			_w = sharedValue;
 			Neuron = neuron;
 		}
 
@@ -24,7 +22,7 @@ namespace NetworkM
 			bool isUndertow = undertowOn > -1;
 			if (isUndertow)
 			{
-				_WSet(_wHistory.ElementAt(undertowOn));
+				_w.Value = _wHistory.ElementAt(undertowOn);
 				for (int i = 0; i < on; i++)
 					_wHistory.RemoveLast();
 			}
@@ -43,15 +41,15 @@ namespace NetworkM
 		{
 			get
 			{
-				return _WGet();
+				return _w.Value;
 			}
 			set
 			{
-				_wHistory.AddLast(_WGet());
+				_wHistory.AddLast(_w.Value);
 				if (_wHistory.Count > NeuroNetwork.HistorySize)
 					_wHistory.RemoveFirst();
 
-				_WSet(value);
+				_w.Value = value;
 			}
 		}
 

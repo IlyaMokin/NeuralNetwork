@@ -78,6 +78,7 @@
     <Compile Include="ActivationFunctions\ExpSin.cs" />
     <Compile Include="ActivationFunctions\Liner.cs" />
     <Compile Include="ActivationFunctions\GiperbalTan.cs" />
+    <Compile Include="NetworkElements\SharedValue.cs" />
     <Compile Include="SaveAndInizialize\LayerInfo.cs" />
     <Compile Include="NetworkElements\Neuron.cs" />
     <Compile Include="NetworkElements\Link.cs" />

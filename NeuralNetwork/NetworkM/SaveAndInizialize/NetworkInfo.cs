@@ -5,10 +5,9 @@ using System.Text;
 
 namespace NetworkM
 {
-    public class NetworkInfo
-    {
-        public int CountNeuronsInLayer;
-        public string ActivationFunction;
-        public int RecurrentConnectionWithLayer = -1;
-    }
+	public class NetworkInfo
+	{
+		public int CountNeuronsInLayer;
+		public string ActivationFunction;
+	}
 }

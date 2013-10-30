@@ -5,6 +5,7 @@ using System.Text;
 using System.Web.Script.Serialization;
 using System.IO;
 using NetworkM.ActivationFunctions;
+using NetworkM.NetworkElements;
 
 namespace NetworkM
 {
@@ -49,18 +50,6 @@ namespace NetworkM
 						core = new Neuron(previewLayer, layersInfo[index].ActivationFunction);
 					}
 					currentLayer.Add(core);
-
-					if (layersInfo[index].RecurrentConnectionWithLayer != -1)
-					{
-						foreach (var neuron in Layers[layersInfo[index].RecurrentConnectionWithLayer])
-						{
-							double w = 1d / (rand.Next(10) + 1d);
-							var setter = new Action<double>((double x) => { w = x; });
-							var getter = new Func<double>(() => { return w; });
-							neuron.InputLinks.Add(new Link(core, getter, setter));
-							core.OutputLinks.Add(new Link(neuron, getter, setter));
-						}
-					}
 				}
 				Layers.Add(currentLayer);
 				previewLayer = currentLayer;
@@ -219,8 +208,7 @@ namespace NetworkM
 				{
 					InizializeInfo = _inizializeInfo.Select(x => new NetworkInfo()
 						{
-							CountNeuronsInLayer = x.CountNeuronsInLayer,
-							RecurrentConnectionWithLayer = x.RecurrentConnectionWithLayer
+							CountNeuronsInLayer = x.CountNeuronsInLayer
 						}).ToArray()
 				};
 
@@ -270,7 +258,6 @@ namespace NetworkM
 					obj.InizializeInfo.Select(x => new LayerInfo()
 					{
 						CountNeuronsInLayer = x.CountNeuronsInLayer,
-						RecurrentConnectionWithLayer = x.RecurrentConnectionWithLayer
 					}).ToArray());
 
 				for (int layerIndex = 0; layerIndex < obj.CoefficientsT.Count; layerIndex++)

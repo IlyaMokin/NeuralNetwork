@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using MathNet.Numerics.LinearAlgebra.Double;
 using MathNet.Numerics.LinearAlgebra.Generic;
+using NetworkM.NetworkElements;
 
 namespace NetworkM.Teachers.Backpropagation
 {

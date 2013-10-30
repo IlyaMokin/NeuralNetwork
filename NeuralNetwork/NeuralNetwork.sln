@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleGenetic", "Examples\S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XorWithOneHiddenLayer", "Examples\XorWithOneHiddenLayer\XorWithOneHiddenLayer.csproj", "{37CD10F1-806C-45B2-AD7C-73A943B783A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XorWithoutHiddenLayer", "Xor\XorWithoutHiddenLayer.csproj", "{65629D6A-6864-44E8-9C76-04687D94DB8F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XorWithoutHiddenLayer", "Examples\XorWithoutHiddenLayer\XorWithoutHiddenLayer.csproj", "{65629D6A-6864-44E8-9C76-04687D94DB8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

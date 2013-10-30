@@ -49,7 +49,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NetworkM\NetworkM.csproj">
+    <ProjectReference Include="..\..\NetworkM\NetworkM.csproj">
       <Project>{6a1b1428-9eb7-48d8-be3c-74a756180267}</Project>
       <Name>NetworkM</Name>
     </ProjectReference>

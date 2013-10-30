@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NetworkM.NetworkElements;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,8 +50,7 @@ namespace NetworkM.Teachers.Backpropagation
 				if (GetErrorForElement(result, outputs.ElementAt(i)) > Threshold)
 				{
 					CalculateError(outputs.ElementAt(i));
-					//layerIndex > -1 - для рекурентной сети
-					for (int layerIndex = layers.Count - 1; layerIndex > -1; layerIndex--)
+					for (int layerIndex = layers.Count - 1; layerIndex > 0; layerIndex--)
 					{
 						foreach (var neuron in layers[layerIndex])
 						{
