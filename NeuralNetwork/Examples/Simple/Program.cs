@@ -1,5 +1,6 @@
 ﻿using System;
 using NetworkM;
+using NetworkM.Networks;
 
 namespace Simple
 {
@@ -24,7 +25,7 @@ namespace Simple
 			//NeuroNetwork.ActivationFunctions.Add(new ThresholdXorFunction()); //Иначе при инициализации сеть не будет знать о существовании такой функции
 			//NeuroNetwork network = NeuroNetwork.Izialize("result.json");
 
-			var network = new NeuroNetwork(false, 2, 2, 1);
+			var network = new NeuralNetwork(false, 2, 2, 1);
 
 			var teacher = new NetworkM.Teachers.Backpropagation.GradientDescent(network);
 			teacher.Alpha = 0.3;
@@ -39,7 +40,6 @@ namespace Simple
 			} while (err > 0.01);
 
 			Console.WriteLine(err);
-			network.Save("result.json");
 		}
 	}
 }

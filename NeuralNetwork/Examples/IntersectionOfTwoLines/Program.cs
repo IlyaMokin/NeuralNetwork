@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using NetworkM;
 using NetworkM.Teachers.Backpropagation;
+using NetworkM.SaveAndInizialize;
+using NetworkM.Networks;
+using NetworkM.ActivationFunctions;
 
 namespace IntersectionOfTwoLines
 {
@@ -12,146 +15,21 @@ namespace IntersectionOfTwoLines
 	{
 		static void Main(string[] args)
 		{
-			#region sample
-			var inp = new[]{
-				new double[]{5,5},
-				new double[]{5,-5},
-				new double[]{3,3},
-				new double[]{3,-3},
-				new double[]{1,1},
-				new double[]{1,-1},
-				new double[]{0.5,0.5},
-				new double[]{0.5,-0.5},
-				new double[]{-1,-1},
-				new double[]{-1,1},
-				new double[]{-3,3},
-				new double[]{-3,-3},
-				new double[]{-5,5},
-				new double[]{-5,-5},
-
-				new double[]{5,4.9},
-				new double[]{5,-4.9},
-				new double[]{3,2.9},
-				new double[]{3,-2.9},
-				new double[]{1,0.9},
-				new double[]{1,-0.9},
-				new double[]{0.5,0.4},
-				new double[]{0.5,-0.4},
-				new double[]{-1,0.9},
-				new double[]{-1,-0.9},
-				new double[]{-3,2.9},
-				new double[]{-3,-2.9},
-				new double[]{-5,4.9},
-				new double[]{-5,-4.9},
-
-				new double[]{-5,0},
-				new double[]{5,0},
-				new double[]{-3,1},
-				new double[]{3,1},
-				new double[]{4,3},
-				new double[]{-4,3},
-				new double[]{-4,-3},
-				new double[]{4,-3},
-
-				new double[]{5,5.1},
-				new double[]{5,-5.1},
-				new double[]{3,3.1},
-				new double[]{3,-3.1},
-				new double[]{1,1.1},
-				new double[]{1,-1.1},
-				new double[]{0.5,0.6},
-				new double[]{0.5,-0.6},
-				new double[]{-1,1.1},
-				new double[]{-1,-1.1},
-				new double[]{-3,3.1},
-				new double[]{-3,-3.1},
-				new double[]{-5,5.1},
-				new double[]{-5,-5.1}
-
-			};
-			var outp = new[]{
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-				new double[]{1},
-
-				new double[]{0},
-				new double[]{0},
-				new double[]{0},
-				new double[]{0},
-				new double[]{0},
-				new double[]{0},
-				new double[]{0},
-				new double[]{0},
-				new double[]{0},
-				new double[]{0},
-				new double[]{0},
-				new double[]{0},
-				new double[]{0},
-				new double[]{0}
-			};
-			#endregion sample
-
-			NeuroNetwork.ActivationFunctions.Add(new ReversingSigmoid());
-
-			var network = new NeuroNetwork(
-				new LayerInfo() { CountNeuronsInLayer = 2 },
-				new LayerInfo() { CountNeuronsInLayer = 2, ActivationFunction = new NetworkM.ActivationFunctions.Sigmoid() },
-				new LayerInfo() { CountNeuronsInLayer = 1, ActivationFunction = new ThresholdXorFunction() });
-
-			//network = NeuroNetwork.Izialize("result.json");
-			var teacher = new RosenblattMethod(network);
-
-			var err = 0.0d;
-			var e = 10d;
-
-			teacher.Alpha = 1e-8;
-			do
-			{
-				err = teacher.RunEpoch(inp, outp);
-
-				if (teacher.IterationCounter % 1000 == 0)
+			var network = new NeuralNetwork(
+				new SimpleLayerInfo() { CountNeuronsInLayer = 2 },
+				new StrictLayerInfo()
 				{
-					Console.WriteLine(err);
+					Neurons = new[] { 
+						new NeuronInfo() { ActivationFunction = ActivationFunctionEnum.Threshold,T=0,InputWeights = new double[]{-1, 1 } },
+						new NeuronInfo() { ActivationFunction = ActivationFunctionEnum.Threshold,T=0,InputWeights = new double[]{1, 1 } } 
+						}
+				},
+				new StrictLayerInfo()
+				{
+					Neurons = new[] { 
+						new NeuronInfo() { ActivationFunction = ActivationFunctionEnum.Bithreshold,T=0.5,InputWeights = new double[]{1, 1 }}}
 				}
-			} while (err > e && teacher.IterationCounter < 500000);
-
-			Console.WriteLine(err);
-			network.Save("result.json");
+			);
 		}
 	}
 }

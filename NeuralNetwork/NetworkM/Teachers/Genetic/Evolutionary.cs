@@ -1,4 +1,5 @@
 ﻿using NetworkM.NetworkElements;
+using NetworkM.Networks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace NetworkM.Teachers.Genetic
 {
 	public class Evolutionary
 	{
-		private NeuroNetwork _network;
+		private NeuralNetwork _network;
 		private List<List<Neuron>> _layers;
 		private Random rand = new Random(DateTime.Now.Millisecond);
 		private int randRate = 1000;
@@ -42,7 +43,7 @@ namespace NetworkM.Teachers.Genetic
 				});
 		}
 
-		public Evolutionary(NeuroNetwork network, int sizeOfPopulation, int leadOfPopulation, double probabilityOfMutation)
+		public Evolutionary(NeuralNetwork network, int sizeOfPopulation, int leadOfPopulation, double probabilityOfMutation)
 		{
 			_network = network;
 			_sizeOfPopulation = sizeOfPopulation;
@@ -121,7 +122,7 @@ namespace NetworkM.Teachers.Genetic
 			return newPopulations;
 		}
 
-		private NeuroNetwork SetRangesInNetwork(Population population)
+		private NeuralNetwork SetRangesInNetwork(Population population)
 		{
 			int wCounter = 0;
 			int tCounter = 0;

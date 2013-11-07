@@ -1,5 +1,7 @@
-﻿//Обучение сети на xor без скрытых слоев. Обучается не с первого раза!
-using NetworkM;
+﻿using NetworkM;
+using NetworkM.ActivationFunctions;
+using NetworkM.Networks;
+using NetworkM.SaveAndInizialize;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,15 +28,13 @@ namespace XorWithoutHiddenLayer
 				new double[]{0}
 			};
 
-			//NeuroNetwork.ActivationFunctions.Add(new ThresholdXorFunction()); //Иначе при инициализации сеть не будет знать о существовании такой функции
-			//NeuroNetwork network = NeuroNetwork.Izialize("result.json");
+			/*var network = new NeuralNetwork(
+				new SimpleLayerInfo() { CountNeuronsInLayer = 2 },
+				new SimpleLayerInfo() { CountNeuronsInLayer = 1, ActivationFunction = ActivationFunctionEnum.Sin }
+			);
 
-			var network = new NeuroNetwork(
-				new LayerInfo() { CountNeuronsInLayer = 2 },
-				new LayerInfo() { CountNeuronsInLayer = 1, ActivationFunction = new ThresholdXorFunction() });
-
-			var teacher = new NetworkM.Teachers.Backpropagation.RosenblattMethod(network);
-			teacher.Alpha = 1e-8;
+			var teacher = new NetworkM.Teachers.Backpropagation.GradientDescent(network);
+			teacher.Alpha = 0.0025;
 			double err = 0;
 			do
 			{
@@ -43,9 +43,11 @@ namespace XorWithoutHiddenLayer
 				{
 					Console.WriteLine(err);
 				}
-			} while (err > 0.01);
-
-			network.Save("result.json");
+			} while (err > 0.001);/**/
+			var network = NeuralNetwork.Inizialize("result.txt");
+			Console.WriteLine(network.GetAbsoluteError(input,output));
+			//network.Serialize("result.txt");
+			Console.WriteLine();
 		}
 	}
 }

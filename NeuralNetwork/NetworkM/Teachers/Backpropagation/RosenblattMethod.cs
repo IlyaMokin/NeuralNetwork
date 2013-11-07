@@ -1,4 +1,5 @@
 ﻿using NetworkM.NetworkElements;
+using NetworkM.Networks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,9 @@ namespace NetworkM.Teachers.Backpropagation
 	public class RosenblattMethod
 	{
 		private List<List<Neuron>> _layers;
-		private NeuroNetwork _network;
+		private NeuralNetwork _network;
 
-		public RosenblattMethod(NeuroNetwork network)
+		public RosenblattMethod(NeuralNetwork network)
 		{
 			_layers = network.Layers;
 			_network = network;

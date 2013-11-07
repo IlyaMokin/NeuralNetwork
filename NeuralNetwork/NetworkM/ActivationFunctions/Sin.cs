@@ -1,21 +1,54 @@
-﻿using System;
+﻿using NetworkM.NetworkElements;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace NetworkM.ActivationFunctions
 {
-	public class Sin : ActivationFunction
+	internal class Sin : ActivationFunction
 	{
+		private double _aRate = 1;
+		public Sin(Neuron neuron, string aRate)
+		{
+			if (aRate!=null){
+				_aRate = double.Parse(aRate);
+			}
+			neuron.NeuronStimulus += (alpha) =>
+			{
+				_aRate -= alpha * DFA(neuron.S) * neuron.Error;
+			};
+		}
 		public override double F(double s)
 		{
-			//return Math.Sin(3 * s * Math.Sin(0.5 * s) - 2) / 2 + 0.5;
-			return Math.Sin(s);
+			var val = _aRate * s;
+			return
+				val < Math.PI && val > 0 ? Math.Sin(val)
+				: val < 0 ? -1e-12
+				: 1e-12;
 		}
 
 		public override double DF(double s)
 		{
-			return Math.Cos(s);
+			var val = _aRate * s;
+			return
+				val < Math.PI && val > 0 ? s * Math.Cos(val)
+				: val < 0 ? 1
+				: -1;
+		}
+
+		private double DFA(double s)
+		{
+			var val = _aRate * s;
+			return
+				val < Math.PI && val > 0 ? _aRate * Math.Cos(_aRate * s)
+				: val < 0 ? 1
+				: -1;
+		}
+
+		public override string SerializeParams()
+		{
+			return _aRate.ToString();
 		}
 	}
 }

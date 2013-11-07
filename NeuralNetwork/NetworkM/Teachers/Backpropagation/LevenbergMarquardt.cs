@@ -5,15 +5,16 @@ using System.Text;
 using MathNet.Numerics.LinearAlgebra.Double;
 using MathNet.Numerics.LinearAlgebra.Generic;
 using NetworkM.NetworkElements;
+using NetworkM.Networks;
 
 namespace NetworkM.Teachers.Backpropagation
 {
 	public class LevenbergMarquardt
 	{
 		private List<List<Neuron>> layers;
-		private NeuroNetwork network;
+		private NeuralNetwork network;
 
-		public LevenbergMarquardt(NeuroNetwork network,
+		public LevenbergMarquardt(NeuralNetwork network,
 			double startAlpha = 5,
 			double upperLimitForAlpha = 1e20,
 			double lowerLimitForAlpha = 1e-20,

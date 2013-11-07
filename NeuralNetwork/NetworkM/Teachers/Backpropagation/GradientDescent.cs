@@ -1,4 +1,5 @@
 ﻿using NetworkM.NetworkElements;
+using NetworkM.Networks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,9 @@ namespace NetworkM.Teachers.Backpropagation
 	public class GradientDescent
 	{
 		private List<List<Neuron>> layers;
-		private NeuroNetwork network;
+		private NeuralNetwork network;
 
-		public GradientDescent(NeuroNetwork network)
+		public GradientDescent(NeuralNetwork network)
 		{
 			layers = network.Layers;
 			this.network = network;
@@ -19,7 +20,7 @@ namespace NetworkM.Teachers.Backpropagation
 
 		private void CalculateError(double[] output)
 		{
-			for (int i = layers.Count - 1; i >= 0; i--)
+			for (int i = layers.Count - 1; i > 0; i--)
 			{
 				for (int k = 0; k < layers[i].Count; k++)
 				{
@@ -59,6 +60,7 @@ namespace NetworkM.Teachers.Backpropagation
 							{
 								inpLink.W -= Alpha * neuron.Error * neuron.ActivationFunc.DF(neuron.S) * inpLink.Neuron.Out;
 							});
+							neuron.NeuronStimulus(Alpha);
 						}
 					}
 				}

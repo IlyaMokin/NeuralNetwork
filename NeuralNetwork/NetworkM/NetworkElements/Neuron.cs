@@ -1,4 +1,5 @@
 ﻿using NetworkM.ActivationFunctions;
+using NetworkM.Networks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,24 +7,30 @@ using System.Text;
 
 namespace NetworkM.NetworkElements
 {
-	public class Neuron
+	internal class Neuron
 	{
-		static Random rand = new Random(DateTime.Now.Millisecond);
+		private static Random _rand = new Random(DateTime.Now.Millisecond);
 		public Neuron() { }
-		public Neuron(List<Neuron> previewLayer, ActivationFunction func)
+		public Neuron(List<Neuron> previewLayer, ActivationFunctionEnum func, string ActivationFunctionArguments, double? t = null, double[] InputWeights = null)
 		{
+			int inputWIndex = 0;
+			_t = t ?? _rand.NextDouble();
 			foreach (var previewLayerNeuron in previewLayer)
 			{
-				var sharedW = new SharedValue<double>(1d / (rand.Next(10) + 1d));
+				var sharedW = new SharedValue<double>(InputWeights != null ? InputWeights[inputWIndex++] : _rand.NextDouble());
 
 				previewLayerNeuron.OutputLinks.Add(new Link(this, sharedW));
 				this.InputLinks.Add(new Link(previewLayerNeuron, sharedW));
 			}
-			ActivationFunc = func;
+			ActivationFunc = FunctionsFactory.GetActivationFunction(func, ActivationFunctionArguments, this);
 		}
+
+		public Action<double> NeuronStimulus = delegate { };
+
 		public List<Link> InputLinks = new List<Link>();
 		public List<Link> OutputLinks = new List<Link>();
-		private double _t = 0.5d / (rand.Next(10) + 1d);
+
+		private double _t;
 
 		public bool Undertow(int on)
 		{
@@ -41,8 +48,8 @@ namespace NetworkM.NetworkElements
 
 			return isUndertow;
 		}
-
 		private LinkedList<double> _tHistory = new LinkedList<double>();
+
 		public IEnumerable<double> THistory
 		{
 			get
@@ -59,7 +66,7 @@ namespace NetworkM.NetworkElements
 			set
 			{
 				_tHistory.AddLast(_t);
-				if (_tHistory.Count > NeuroNetwork.HistorySize)
+				if (_tHistory.Count > NeuralNetwork.HistorySize)
 					_tHistory.RemoveFirst();
 				_t = value;
 			}
@@ -68,9 +75,12 @@ namespace NetworkM.NetworkElements
 		public double Out;
 		public double Error = 0;
 		public ActivationFunction ActivationFunc;
-		public void ClearHistory(){
+
+		public void ClearHistory()
+		{
 			_tHistory = new LinkedList<double>();
-			foreach(var link in InputLinks){
+			foreach (var link in InputLinks)
+			{
 				link.ClearHistory();
 			}
 		}

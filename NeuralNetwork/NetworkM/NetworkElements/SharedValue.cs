@@ -5,7 +5,7 @@ using System.Text;
 
 namespace NetworkM.NetworkElements
 {
-	public class SharedValue<T>
+	internal class SharedValue<T>
 	{
 		public T Value;
 		public SharedValue(T value)

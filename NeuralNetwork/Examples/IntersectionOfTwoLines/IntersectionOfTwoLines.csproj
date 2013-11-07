@@ -41,11 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ThresholdFunction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReversingSigmoid.cs" />
-    <Compile Include="ThresholdXorFunction.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

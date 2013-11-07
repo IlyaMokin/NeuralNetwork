@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace NetworkM
+namespace NetworkM.SaveAndInizialize
 {
 	public class NetworkInfo
 	{

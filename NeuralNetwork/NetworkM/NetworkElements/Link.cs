@@ -1,11 +1,12 @@
-﻿using System;
+﻿using NetworkM.Networks;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace NetworkM.NetworkElements
 {
-	public class Link
+	internal class Link
 	{
 		private SharedValue<double> _w;
 		public Link(Neuron neuron, SharedValue<double> sharedValue)
@@ -46,7 +47,7 @@ namespace NetworkM.NetworkElements
 			set
 			{
 				_wHistory.AddLast(_w.Value);
-				if (_wHistory.Count > NeuroNetwork.HistorySize)
+				if (_wHistory.Count > NeuralNetwork.HistorySize)
 					_wHistory.RemoveFirst();
 
 				_w.Value = value;

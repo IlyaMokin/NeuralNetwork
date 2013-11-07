@@ -72,18 +72,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActivationFunctions\ActivationFunction.cs" />
+    <Compile Include="ActivationFunctions\Common\ActivationFunction.cs" />
     <Compile Include="ActivationFunctions\BipolarSigmoid.cs" />
+    <Compile Include="ActivationFunctions\Bithreshold.cs" />
+    <Compile Include="ActivationFunctions\Threshold.cs" />
+    <Compile Include="ActivationFunctions\Gauss.cs" />
+    <Compile Include="ActivationFunctions\Common\FunctionsFactory.cs" />
     <Compile Include="ActivationFunctions\Sin.cs" />
     <Compile Include="ActivationFunctions\ExpSin.cs" />
     <Compile Include="ActivationFunctions\Liner.cs" />
     <Compile Include="ActivationFunctions\GiperbalTan.cs" />
     <Compile Include="NetworkElements\SharedValue.cs" />
-    <Compile Include="SaveAndInizialize\LayerInfo.cs" />
+    <Compile Include="ActivationFunctions\Common\ActivationFunctionEnum.cs" />
+    <Compile Include="SaveAndInizialize\NeuronInfo.cs" />
+    <Compile Include="SaveAndInizialize\ILayerInfo.cs" />
+    <Compile Include="SaveAndInizialize\StrictLayerInfo.cs" />
+    <Compile Include="SaveAndInizialize\SimpleLayerInfo.cs" />
     <Compile Include="NetworkElements\Neuron.cs" />
     <Compile Include="NetworkElements\Link.cs" />
     <Compile Include="SaveAndInizialize\NetworkInfo.cs" />
-    <Compile Include="NeuroNetwork.cs" />
+    <Compile Include="Networks\NeuralNetwork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ActivationFunctions\Sigmoid.cs" />
     <Compile Include="SaveAndInizialize\StructForSave.cs" />
@@ -118,9 +126,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="LibraryExtensions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
