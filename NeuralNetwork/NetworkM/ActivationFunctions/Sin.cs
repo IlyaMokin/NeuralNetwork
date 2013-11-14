@@ -9,6 +9,7 @@ namespace NetworkM.ActivationFunctions
 	internal class Sin : ActivationFunction
 	{
 		private double _aRate = 1;
+		private double _minStep = 1e-16;
 		public Sin(Neuron neuron, string aRate)
 		{
 			if (aRate!=null){
@@ -24,8 +25,8 @@ namespace NetworkM.ActivationFunctions
 			var val = _aRate * s;
 			return
 				val < Math.PI && val > 0 ? Math.Sin(val)
-				: val < 0 ? -1e-12
-				: 1e-12;
+				: val < 0 ? -_minStep
+				: _minStep;
 		}
 
 		public override double DF(double s)
@@ -42,8 +43,8 @@ namespace NetworkM.ActivationFunctions
 			var val = _aRate * s;
 			return
 				val < Math.PI && val > 0 ? _aRate * Math.Cos(_aRate * s)
-				: val < 0 ? 1
-				: -1;
+				: val < 0                ? 1
+				:                         -1;
 		}
 
 		public override string SerializeParams()
