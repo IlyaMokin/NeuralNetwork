@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XorWithOneHiddenLayer", "Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XorWithoutHiddenLayer", "Examples\XorWithoutHiddenLayer\XorWithoutHiddenLayer.csproj", "{65629D6A-6864-44E8-9C76-04687D94DB8F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Henon", "Henon\Henon.csproj", "{09A6F24D-0A92-4034-9756-3DD33504DE00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,16 @@ Global
 		{65629D6A-6864-44E8-9C76-04687D94DB8F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{65629D6A-6864-44E8-9C76-04687D94DB8F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{65629D6A-6864-44E8-9C76-04687D94DB8F}.Release|x86.ActiveCfg = Release|Any CPU
+		{09A6F24D-0A92-4034-9756-3DD33504DE00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09A6F24D-0A92-4034-9756-3DD33504DE00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09A6F24D-0A92-4034-9756-3DD33504DE00}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{09A6F24D-0A92-4034-9756-3DD33504DE00}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{09A6F24D-0A92-4034-9756-3DD33504DE00}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{09A6F24D-0A92-4034-9756-3DD33504DE00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09A6F24D-0A92-4034-9756-3DD33504DE00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09A6F24D-0A92-4034-9756-3DD33504DE00}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{09A6F24D-0A92-4034-9756-3DD33504DE00}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{09A6F24D-0A92-4034-9756-3DD33504DE00}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,5 +107,6 @@ Global
 		{B0168225-B5C6-4B6A-968E-834C614DDC3E} = {0C41B3DD-92CB-4C2B-9B52-9E9DA49B59B6}
 		{37CD10F1-806C-45B2-AD7C-73A943B783A7} = {0C41B3DD-92CB-4C2B-9B52-9E9DA49B59B6}
 		{65629D6A-6864-44E8-9C76-04687D94DB8F} = {0C41B3DD-92CB-4C2B-9B52-9E9DA49B59B6}
+		{09A6F24D-0A92-4034-9756-3DD33504DE00} = {0C41B3DD-92CB-4C2B-9B52-9E9DA49B59B6}
 	EndGlobalSection
 EndGlobal

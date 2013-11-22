@@ -1,6 +1,8 @@
 ﻿using System;
 using NetworkM;
 using NetworkM.Networks;
+using NetworkM.SaveAndInizialize;
+using NetworkM.ActivationFunctions;
 
 namespace Simple
 {
@@ -22,13 +24,12 @@ namespace Simple
 				new double[]{1}
 			};
 
-			//NeuroNetwork.ActivationFunctions.Add(new ThresholdXorFunction()); //Иначе при инициализации сеть не будет знать о существовании такой функции
-			//NeuroNetwork network = NeuroNetwork.Izialize("result.json");
-
-			var network = new NeuralNetwork(false, 2, 2, 1);
+			var network = new NeuralNetwork(
+				new SimpleLayerInfo() { CountNeuronsInLayer = 2 },
+				new SimpleLayerInfo() { CountNeuronsInLayer = 1, ActivationFunction = ActivationFunctionEnum.Sigmoid });
 
 			var teacher = new NetworkM.Teachers.Backpropagation.GradientDescent(network);
-			teacher.Alpha = 0.3;
+			teacher.Alpha = 0.25;
 			double err = 0;
 			do
 			{

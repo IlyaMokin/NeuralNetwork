@@ -14,7 +14,8 @@ namespace NetworkM.ActivationFunctions
 			ActivationFunctionEnum.Gauss,
 			ActivationFunctionEnum.ExpSin, 
 			ActivationFunctionEnum.Bithreshold, 
-			ActivationFunctionEnum.Threshold
+			ActivationFunctionEnum.Threshold,
+			ActivationFunctionEnum.None
 		};
 
 		public static ActivationFunction GetActivationFunction(ActivationFunctionEnum activationFunction, string ActivationFunctionArguments, Neuron neuron)

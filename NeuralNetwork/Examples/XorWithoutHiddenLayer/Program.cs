@@ -28,7 +28,7 @@ namespace XorWithoutHiddenLayer
 				new double[]{0}
 			};
 
-			/*var network = new NeuralNetwork(
+			var network = new NeuralNetwork(
 				new SimpleLayerInfo() { CountNeuronsInLayer = 2 },
 				new SimpleLayerInfo() { CountNeuronsInLayer = 1, ActivationFunction = ActivationFunctionEnum.Sin }
 			);
@@ -43,10 +43,8 @@ namespace XorWithoutHiddenLayer
 				{
 					Console.WriteLine(err);
 				}
-			} while (err > 0.001);/**/
-			var network = NeuralNetwork.Inizialize("result.txt");
+			} while (err > 0.001);
 			Console.WriteLine(network.GetAbsoluteError(input,output));
-			//network.Serialize("result.txt");
 			Console.WriteLine();
 		}
 	}

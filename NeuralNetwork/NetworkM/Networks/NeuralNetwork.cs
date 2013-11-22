@@ -105,6 +105,28 @@ namespace NetworkM.Networks
 
 		public void Serialize(string path)
 		{
+			using (var writer = new StreamWriter(path, false, Encoding.UTF8))
+			{
+				writer.WriteLine(new JavaScriptSerializer().Serialize(GetInfo()));
+			}
+		}
+
+		public static NeuralNetwork Inizialize(string path)
+		{
+			using (var reader = new StreamReader(path, Encoding.UTF8))
+			{
+				var inizializeInfo = new JavaScriptSerializer().Deserialize <List<StrictLayerInfo>>(reader.ReadToEnd()).ToArray();
+				return Inizialize(inizializeInfo);
+			}
+		}
+
+		public static NeuralNetwork Inizialize(IEnumerable<StrictLayerInfo> inizializeInfo)
+		{
+			return new NeuralNetwork(inizializeInfo.ToArray());
+		}
+
+		public IEnumerable<StrictLayerInfo> GetInfo()
+		{
 			var obj = new List<StrictLayerInfo>();
 			foreach (var layer in Layers)
 			{
@@ -115,8 +137,8 @@ namespace NetworkM.Networks
 					layerNeurons.Add(new NeuronInfo()
 					{
 						T = neuron.T,
-						ActivationFunction = neuron.ActivationFunc != null 
-							? FunctionsFactory.GetActivationFunctionName(neuron.ActivationFunc.GetType().ToString()) 
+						ActivationFunction = neuron.ActivationFunc != null
+							? FunctionsFactory.GetActivationFunctionName(neuron.ActivationFunc.GetType().ToString())
 							: ActivationFunctionEnum.None,
 						ActivationFunctionArguments = neuron.ActivationFunc != null
 							? neuron.ActivationFunc.SerializeParams()
@@ -126,20 +148,7 @@ namespace NetworkM.Networks
 				}
 				obj.Add(new StrictLayerInfo() { Neurons = layerNeurons.ToArray() });
 			}
-
-			using (var writer = new StreamWriter(path, false, Encoding.UTF8))
-			{
-				writer.WriteLine(new JavaScriptSerializer().Serialize(obj));
-			}
-		}
-
-		public static NeuralNetwork Inizialize(string path)
-		{
-			using (var reader = new StreamReader(path, Encoding.UTF8))
-			{
-				var inizializeInfo = new JavaScriptSerializer().Deserialize <List<StrictLayerInfo>>(reader.ReadToEnd()).ToArray();
-				return new NeuralNetwork(inizializeInfo);
-			}
+			return obj;
 		}
 	}
 }

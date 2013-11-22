@@ -8,6 +8,7 @@ using NetworkM.Teachers.Backpropagation;
 using NetworkM.SaveAndInizialize;
 using NetworkM.Networks;
 using NetworkM.ActivationFunctions;
+using System.Threading;
 
 namespace IntersectionOfTwoLines
 {
@@ -42,15 +43,15 @@ namespace IntersectionOfTwoLines
 			}
 
 
-			/*network = new NeuralNetwork(
+			network = new NeuralNetwork(
 				new SimpleLayerInfo() { CountNeuronsInLayer = 2 },
 				new SimpleLayerInfo() { CountNeuronsInLayer = 6 , ActivationFunction = ActivationFunctionEnum.GiperbalTan },
 				new SimpleLayerInfo() { CountNeuronsInLayer = 1, ActivationFunction = ActivationFunctionEnum.Sin }
-			);*/
+			);
 
-			network = NeuralNetwork.Inizialize("output.txt");
+			//network = NeuralNetwork.Inizialize("output.txt");
 			var teacher = new NetworkM.Teachers.Backpropagation.GradientDescent(network);
-			teacher.Alpha = 0.0025;
+			teacher.Alpha = 0.025;
 			double err = 0;
 			do
 			{
@@ -61,8 +62,13 @@ namespace IntersectionOfTwoLines
 				}
 			} while (err > 0.1);/**/
 
-			Console.WriteLine(network.GetAbsoluteError(input,output));
-			network.Serialize("output.txt");
+			/*Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("EN-US");
+			while(true){
+				var inp  = Console.ReadLine().Split(' ').Select(x=>double.Parse(x)).ToArray();
+				Console.WriteLine(Math.Round(network.GetResult(inp)[0],4));
+				Console.WriteLine();
+			}*/
+			//network.Serialize("output.txt");
 		}
 	}
 }
