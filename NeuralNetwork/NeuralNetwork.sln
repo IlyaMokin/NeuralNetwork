@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XorWithOneHiddenLayer", "Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XorWithoutHiddenLayer", "Examples\XorWithoutHiddenLayer\XorWithoutHiddenLayer.csproj", "{65629D6A-6864-44E8-9C76-04687D94DB8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Henon", "Henon\Henon.csproj", "{09A6F24D-0A92-4034-9756-3DD33504DE00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Henon", "Examples\Henon\Henon.csproj", "{09A6F24D-0A92-4034-9756-3DD33504DE00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
