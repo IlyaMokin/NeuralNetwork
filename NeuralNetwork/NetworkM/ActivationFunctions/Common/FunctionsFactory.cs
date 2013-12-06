@@ -7,9 +7,10 @@ using System.Text;
 
 namespace NetworkM.ActivationFunctions
 {
-	internal static class FunctionsFactory
+	internal class FunctionsFactory
 	{
 		private static Random _random = new Random(DateTime.Now.Millisecond);
+		private Dictionary<ActivationFunctionEnum,ActivationFunction> _activationFunctions = new Dictionary<ActivationFunctionEnum,ActivationFunction>();
 		private static IEnumerable<ActivationFunctionEnum> _randomIgnoreList = new[] { 
 			ActivationFunctionEnum.Gauss,
 			ActivationFunctionEnum.ExpSin, 
@@ -18,7 +19,26 @@ namespace NetworkM.ActivationFunctions
 			ActivationFunctionEnum.None
 		};
 
-		public static ActivationFunction GetActivationFunction(ActivationFunctionEnum activationFunction, string ActivationFunctionArguments, Neuron neuron)
+		private static IEnumerable<ActivationFunctionEnum> _notCashingList = new[] { 
+			ActivationFunctionEnum.Gauss,
+			ActivationFunctionEnum.Sin
+		};
+
+		public ActivationFunction GetActivationFunction(ActivationFunctionEnum activationFunction, string ActivationFunctionArguments, Neuron neuron)
+		{
+			if(_notCashingList.Contains(activationFunction))
+			{
+				return GetNewActivationFunction(activationFunction, ActivationFunctionArguments, neuron);
+			}
+			else if (!_activationFunctions.Keys.Contains(activationFunction))
+			{
+				_activationFunctions[activationFunction] = GetNewActivationFunction(activationFunction, ActivationFunctionArguments, neuron);
+			} 
+
+			return _activationFunctions[activationFunction];
+		}
+
+		private ActivationFunction GetNewActivationFunction(ActivationFunctionEnum activationFunction, string ActivationFunctionArguments, Neuron neuron)
 		{
 			switch (activationFunction)
 			{
@@ -50,7 +70,7 @@ namespace NetworkM.ActivationFunctions
 			}
 		}
 
-		public static ActivationFunctionEnum GetActivationFunctionName(string activationFunction)
+		public ActivationFunctionEnum GetActivationFunctionName(string activationFunction)
 		{
 			return Enum.GetValues(typeof(ActivationFunctionEnum)).Cast<ActivationFunctionEnum>()
 				.First(f => f.ToString().Equals(activationFunction.Split('.').Last(), StringComparison.InvariantCultureIgnoreCase)); ;

@@ -16,6 +16,8 @@ namespace NetworkM.Networks
 		{
 			var previewLayer = new List<Neuron>();
 			int count = layersInfo.Count();
+			FunctionsFactory functionsFactory = new FunctionsFactory();
+
 			for (int index = 0; index < count; index++)
 			{
 				var countNeurons = layersInfo[index].CountNeuronsInLayer;
@@ -24,7 +26,14 @@ namespace NetworkM.Networks
 				{
 					var neuron = layersInfo[index].Neurons.ElementAt(k);
 
-					var core = new Neuron(previewLayer, neuron.ActivationFunction, neuron.ActivationFunctionArguments, neuron.T, neuron.InputWeights);
+					var core = new Neuron(
+							previewLayer: previewLayer,
+							func: neuron.ActivationFunction,
+							activationFunctionArguments: neuron.ActivationFunctionArguments,
+							functionsFactory: functionsFactory,
+							t: neuron.T,
+							inputWeights: neuron.InputWeights);
+
 					currentLayer.Add(core);
 				}
 				Layers.Add(currentLayer);
@@ -115,7 +124,7 @@ namespace NetworkM.Networks
 		{
 			using (var reader = new StreamReader(path, Encoding.UTF8))
 			{
-				var inizializeInfo = new JavaScriptSerializer().Deserialize <List<StrictLayerInfo>>(reader.ReadToEnd()).ToArray();
+				var inizializeInfo = new JavaScriptSerializer().Deserialize<List<StrictLayerInfo>>(reader.ReadToEnd()).ToArray();
 				return Inizialize(inizializeInfo);
 			}
 		}
@@ -128,6 +137,7 @@ namespace NetworkM.Networks
 		public IEnumerable<StrictLayerInfo> GetInfo()
 		{
 			var obj = new List<StrictLayerInfo>();
+			var functionsFactory = new FunctionsFactory();
 			foreach (var layer in Layers)
 			{
 				var layerNeurons = new List<NeuronInfo>();
@@ -138,7 +148,7 @@ namespace NetworkM.Networks
 					{
 						T = neuron.T,
 						ActivationFunction = neuron.ActivationFunc != null
-							? FunctionsFactory.GetActivationFunctionName(neuron.ActivationFunc.GetType().ToString())
+							? functionsFactory.GetActivationFunctionName(neuron.ActivationFunc.GetType().ToString())
 							: ActivationFunctionEnum.None,
 						ActivationFunctionArguments = neuron.ActivationFunc != null
 							? neuron.ActivationFunc.SerializeParams()
