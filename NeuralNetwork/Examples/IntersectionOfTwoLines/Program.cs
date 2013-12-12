@@ -45,7 +45,7 @@ namespace IntersectionOfTwoLines
 
 			network = new NeuralNetwork(
 				new SimpleLayerInfo() { CountNeuronsInLayer = 2 },
-				new SimpleLayerInfo() { CountNeuronsInLayer = 6 , ActivationFunction = ActivationFunctionEnum.GiperbalTan },
+				new SimpleLayerInfo() { CountNeuronsInLayer = 4 , ActivationFunction = ActivationFunctionEnum.GiperbalTan },
 				new SimpleLayerInfo() { CountNeuronsInLayer = 1, ActivationFunction = ActivationFunctionEnum.Sin }
 			);
 
@@ -55,7 +55,7 @@ namespace IntersectionOfTwoLines
 			double err = 0;
 			do
 			{
-				err = teacher.RunEpoch(input, output);
+				err = teacher.RunEpoch(input, output,true);
 				if (teacher.IterationCounter % 100 == 0)
 				{
 					Console.WriteLine(err);

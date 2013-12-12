@@ -44,7 +44,7 @@ namespace XorWithOneHiddenLayer
 				{
 					Console.WriteLine(err);
 				}
-			} while (err > 0.01);			
+			} while (err > 0.01);
 		}
 	}
 }

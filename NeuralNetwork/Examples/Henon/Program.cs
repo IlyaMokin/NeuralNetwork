@@ -51,7 +51,14 @@ namespace Henon
 
 			var network = new NeuralNetwork(
 				new SimpleLayerInfo { CountNeuronsInLayer = 8 },
-				new SimpleLayerInfo { CountNeuronsInLayer = 3, ActivationFunction = ActivationFunctionEnum.GiperbalTan },
+				new StrictLayerInfo
+				{
+					Neurons = new[] {
+						new NeuronInfo {ActivationFunction = ActivationFunctionEnum.GiperbalTan},
+						new NeuronInfo {ActivationFunction = ActivationFunctionEnum.Gauss},
+						new NeuronInfo {ActivationFunction = ActivationFunctionEnum.GiperbalTan}
+						}
+				},
 				new SimpleLayerInfo { CountNeuronsInLayer = 1, ActivationFunction = ActivationFunctionEnum.Liner }
 			);
 

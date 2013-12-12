@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XorWithoutHiddenLayer", "Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Henon", "Examples\Henon\Henon.csproj", "{09A6F24D-0A92-4034-9756-3DD33504DE00}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterRecognition", "CharacterRecognition\CharacterRecognition.csproj", "{641FEF0A-D611-4617-B229-4EC97F6A50DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,16 @@ Global
 		{09A6F24D-0A92-4034-9756-3DD33504DE00}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{09A6F24D-0A92-4034-9756-3DD33504DE00}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{09A6F24D-0A92-4034-9756-3DD33504DE00}.Release|x86.ActiveCfg = Release|Any CPU
+		{641FEF0A-D611-4617-B229-4EC97F6A50DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{641FEF0A-D611-4617-B229-4EC97F6A50DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{641FEF0A-D611-4617-B229-4EC97F6A50DB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{641FEF0A-D611-4617-B229-4EC97F6A50DB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{641FEF0A-D611-4617-B229-4EC97F6A50DB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{641FEF0A-D611-4617-B229-4EC97F6A50DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{641FEF0A-D611-4617-B229-4EC97F6A50DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{641FEF0A-D611-4617-B229-4EC97F6A50DB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{641FEF0A-D611-4617-B229-4EC97F6A50DB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{641FEF0A-D611-4617-B229-4EC97F6A50DB}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,5 +120,6 @@ Global
 		{37CD10F1-806C-45B2-AD7C-73A943B783A7} = {0C41B3DD-92CB-4C2B-9B52-9E9DA49B59B6}
 		{65629D6A-6864-44E8-9C76-04687D94DB8F} = {0C41B3DD-92CB-4C2B-9B52-9E9DA49B59B6}
 		{09A6F24D-0A92-4034-9756-3DD33504DE00} = {0C41B3DD-92CB-4C2B-9B52-9E9DA49B59B6}
+		{641FEF0A-D611-4617-B229-4EC97F6A50DB} = {0C41B3DD-92CB-4C2B-9B52-9E9DA49B59B6}
 	EndGlobalSection
 EndGlobal
