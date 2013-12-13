@@ -11,18 +11,24 @@ namespace NetworkM.NetworkElements
 	{
 		private static Random _rand = new Random(DateTime.Now.Millisecond);
 		public Neuron() { }
-		public Neuron(List<Neuron> previewLayer, ActivationFunctionEnum func, string ActivationFunctionArguments, double? t = null, double[] InputWeights = null)
+		public Neuron(
+			List<Neuron> previewLayer, 
+			ActivationFunctionEnum func, 
+			string activationFunctionArguments,
+			FunctionsFactory functionsFactory, 
+			double? t = null, 
+			double[] inputWeights = null)
 		{
 			int inputWIndex = 0;
 			_t = t ?? _rand.NextDouble();
 			foreach (var previewLayerNeuron in previewLayer)
 			{
-				var sharedW = new SharedValue<double>(InputWeights != null ? InputWeights[inputWIndex++] : _rand.NextDouble());
+				var sharedW = new SharedValue<double>(inputWeights != null ? inputWeights[inputWIndex++] : _rand.NextDouble());
 
 				previewLayerNeuron.OutputLinks.Add(new Link(this, sharedW));
 				this.InputLinks.Add(new Link(previewLayerNeuron, sharedW));
 			}
-			ActivationFunc = FunctionsFactory.GetActivationFunction(func, ActivationFunctionArguments, this);
+			ActivationFunc = functionsFactory.GetActivationFunction(func, activationFunctionArguments, this);
 		}
 
 		public Action<double> NeuronStimulus = delegate { };
