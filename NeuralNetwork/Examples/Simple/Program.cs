@@ -24,10 +24,10 @@ namespace Simple
 				new double[]{1}
 			};
 
-			var network = new NeuralNetwork(
+			/*var network = new NeuralNetwork(
 				new SimpleLayerInfo() { CountNeuronsInLayer = 2 },
-				new SimpleLayerInfo() { CountNeuronsInLayer = 1, ActivationFunction = ActivationFunctionEnum.Sigmoid });
-
+				new SimpleLayerInfo() { CountNeuronsInLayer = 1, ActivationFunction = ActivationFunctionEnum.Sigmoid });*/
+			var network = NeuralNetwork.Inizialize("sdsd.txt");
 			var teacher = new NetworkM.Teachers.Backpropagation.GradientDescent(network);
 			teacher.Alpha = 0.25;
 			double err = 0;
@@ -38,8 +38,8 @@ namespace Simple
 				{
 					Console.WriteLine(err);
 				}
-			} while (err > 0.01);
-
+			} while (err > 0.1);
+			network.Serialize("sdsd.txt");
 			Console.WriteLine(err);
 		}
 	}

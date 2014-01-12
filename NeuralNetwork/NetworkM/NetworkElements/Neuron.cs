@@ -20,7 +20,7 @@ namespace NetworkM.NetworkElements
 			double[] inputWeights = null)
 		{
 			int inputWIndex = 0;
-			_t = t ?? _rand.NextDouble();
+			T = t ?? _rand.NextDouble();
 			foreach (var previewLayerNeuron in previewLayer)
 			{
 				var sharedW = new SharedValue<double>(inputWeights != null ? inputWeights[inputWIndex++] : _rand.NextDouble());
@@ -36,59 +36,10 @@ namespace NetworkM.NetworkElements
 		public List<Link> InputLinks = new List<Link>();
 		public List<Link> OutputLinks = new List<Link>();
 
-		private double _t;
-
-		public bool Undertow(int on)
-		{
-			int undertowOn = _tHistory.Count - on;
-			bool isUndertow = undertowOn > -1;
-			if (isUndertow)
-			{
-				_t = _tHistory.ElementAt(undertowOn);
-				for (int i = 0; i < on; i++)
-					_tHistory.RemoveLast();
-			}
-
-			foreach (var inp in this.InputLinks)
-				inp.Undertow(on);
-
-			return isUndertow;
-		}
-		private LinkedList<double> _tHistory = new LinkedList<double>();
-
-		public IEnumerable<double> THistory
-		{
-			get
-			{
-				return _tHistory;
-			}
-		}
-		public double T
-		{
-			get
-			{
-				return _t;
-			}
-			set
-			{
-				_tHistory.AddLast(_t);
-				if (_tHistory.Count > NeuralNetwork.HistorySize)
-					_tHistory.RemoveFirst();
-				_t = value;
-			}
-		}
+		public double T {get;set;}
 		public double S;
 		public double Out;
 		public double Error = 0;
 		public ActivationFunction ActivationFunc;
-
-		public void ClearHistory()
-		{
-			_tHistory = new LinkedList<double>();
-			foreach (var link in InputLinks)
-			{
-				link.ClearHistory();
-			}
-		}
 	}
 }

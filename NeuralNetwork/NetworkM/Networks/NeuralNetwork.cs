@@ -41,21 +41,7 @@ namespace NetworkM.Networks
 			}
 		}
 
-		public bool Undertow(int on = 1)
-		{
-			bool isUndertow = true;
-			foreach (var layer in Layers)
-				foreach (var neuron in layer)
-				{
-					isUndertow = isUndertow && neuron.Undertow(on);
-				}
-
-			return isUndertow;
-		}
-
 		internal List<List<Neuron>> Layers = new List<List<Neuron>>();
-
-		public static int HistorySize = 10;
 
 		public double GetAbsoluteError(IEnumerable<double[]> inputs, IEnumerable<double[]> outputs, double threshold = 0)
 		{
@@ -97,17 +83,6 @@ namespace NetworkM.Networks
 				{
 					neuron.S = neuron.InputLinks.Sum(x => x.W * x.Neuron.Out) - neuron.T;
 					neuron.Out = neuron.ActivationFunc.F(neuron.S);
-				}
-			}
-		}
-
-		public void ClearHistory()
-		{
-			foreach (var layer in Layers)
-			{
-				foreach (var neuron in layer)
-				{
-					neuron.ClearHistory();
 				}
 			}
 		}
