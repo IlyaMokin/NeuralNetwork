@@ -17,18 +17,18 @@ namespace IntersectionOfTwoLines
 		static void Main(string[] args)
 		{
 			var network = new NeuralNetwork(
-				new SimpleLayerInfo() { CountNeuronsInLayer = 2 },
-				new StrictLayerInfo()
+				new SimpleLayerInfo { CountNeuronsInLayer = 2 },
+				new StrictLayerInfo
 				{
 					Neurons = new[] { 
-						new NeuronInfo() { ActivationFunction = ActivationFunctionEnum.Threshold,T=0,InputWeights = new double[]{-1, 1 } },
-						new NeuronInfo() { ActivationFunction = ActivationFunctionEnum.Threshold,T=0,InputWeights = new double[]{1, 1 } } 
+						new NeuronInfo { ActivationFunction = ActivationFunctionEnum.Threshold,T=0,InputWeights = new double[]{-1, 1 } },
+						new NeuronInfo { ActivationFunction = ActivationFunctionEnum.Threshold,T=0,InputWeights = new double[]{1, 1 } } 
 						}
 				},
-				new StrictLayerInfo()
+				new StrictLayerInfo
 				{
 					Neurons = new[] { 
-						new NeuronInfo() { ActivationFunction = ActivationFunctionEnum.Bithreshold,T=0.5,InputWeights = new double[]{1, 1 }}}
+						new NeuronInfo { ActivationFunction = ActivationFunctionEnum.Bithreshold,T=0.5,InputWeights = new double[]{1, 1 }}}
 				}
 			);
 
@@ -44,9 +44,9 @@ namespace IntersectionOfTwoLines
 
 
 			network = new NeuralNetwork(
-				new SimpleLayerInfo() { CountNeuronsInLayer = 2 },
-				new SimpleLayerInfo() { CountNeuronsInLayer = 4 , ActivationFunction = ActivationFunctionEnum.GiperbalTan },
-				new SimpleLayerInfo() { CountNeuronsInLayer = 1, ActivationFunction = ActivationFunctionEnum.Sin }
+				new SimpleLayerInfo { CountNeuronsInLayer = 2 },
+				new SimpleLayerInfo { CountNeuronsInLayer = 4 , ActivationFunction = ActivationFunctionEnum.GiperbalTan },
+				new SimpleLayerInfo { CountNeuronsInLayer = 1, ActivationFunction = ActivationFunctionEnum.Sin }
 			);
 
 			//network = NeuralNetwork.Inizialize("output.txt");

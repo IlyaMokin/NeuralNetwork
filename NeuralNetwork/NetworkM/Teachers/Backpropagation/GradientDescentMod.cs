@@ -20,13 +20,13 @@ namespace NetworkM.Teachers.Backpropagation
 			this._network = network;
 		}
 
-		private void CalculateError(double[] output)
+		private void CalculateError(double[] output, int outputLayerId)
 		{
-			for (int i = _layers.Count - 1; i > 0; i--)
+			for (int i = outputLayerId; i > 0; i--)
 			{
 				for (int k = 0; k < _layers[i].Count; k++)
 				{
-					if (i == _layers.Count - 1)
+					if (i == outputLayerId)
 					{
 						_layers[i][k].Error = _layers[i][k].Out - output[k];
 					}
@@ -47,23 +47,48 @@ namespace NetworkM.Teachers.Backpropagation
 
 		public double RunEpoch(IEnumerable<double[]> inputs, IEnumerable<double[]> outputs, bool optimize = false)
 		{
+			for (var id = 0; id < inputs.Count(); id += 1)
+			{
+				var input = inputs.ElementAt(id);
+				var output = outputs.ElementAt(id);
 
+				
+			}
 
 			Error = _network.GetAbsoluteError(inputs, outputs, Threshold);
 			IterationCounter += 1;
 			return Error;
 		}
 
-		/*private double[] GetLayerResult(double[] input, int inputLayerId, int outputLayerId)
+		private void TeachLayer(IEnumerable<double[]> inputs, IEnumerable<double[]> outputs, int inputLayerId, int outputLayerId)
 		{
-			for(var neuronId = 0; neuronId<_layers[inputLayerId].Count;neuronId+=1)
+		}
+
+		private double[] GetLayerResult(double[] input, int inputLayerId, int outputLayerId)
+		{
+			for (var neuronId = 0; neuronId < _layers[inputLayerId].Count; neuronId += 1)
 			{
 				var neuron = _layers[inputLayerId][neuronId];
 				neuron.Out = input[neuronId];
 			}
+			TeachInternalLayer(input, inputLayerId, outputLayerId);
+			return _layers[outputLayerId].Select(n => n.Out).ToArray();
+		}
 
-
-		}*/
+		private void TeachInternalLayer(double[] input, int inputLayerId, int outputLayerId)
+		{
+			GetLayerResult(input, inputLayerId, outputLayerId);
+			CalculateError(input, outputLayerId);
+			foreach (var neuron in _layers[outputLayerId])
+			{
+				neuron.T += Alpha * neuron.Error * neuron.ActivationFunc.DF(neuron.S);
+				neuron.InputLinks.ForEach(inpLink =>
+				{
+					inpLink.W -= Alpha * neuron.Error * neuron.ActivationFunc.DF(neuron.S) * inpLink.Neuron.Out;
+				});
+				neuron.NeuronStimulus(Alpha);
+			}
+		}
 
 		private double GetErrorForElement(double[] res, double[] output)
 		{

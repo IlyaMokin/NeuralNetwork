@@ -30,7 +30,7 @@ namespace Henon
 
 		static void Main(string[] args)
 		{
-			var henon = GetHenonList(3000);
+			var henon = GetHenonList(4000);
 			var helpValue = 0;
 			var min = henon.Min();
 			henon = henon.Select(x => x + Math.Abs(min));
@@ -38,24 +38,29 @@ namespace Henon
 
 			henon = henon.Select(x => x / max);/**/
 
-			double[][] input = henon
+			double[][] inputR = henon
 						.Select((h, index) => new { groupValue = index % 8 != 0 || index == 0 ? helpValue : ++helpValue, value = h })
 						.GroupBy(v => v.groupValue, (key, values) => values.Select(x => x.value).ToArray())
-						.Take(374)
+						.Take(499)
 						.ToArray();
 
-			double[][] output = henon
+			double[][] outputR = henon
 						.Skip(8)
 						.Where((x, index) => index % 8 == 0)
-						.Select(x => new[] { x }).ToArray();
+						.Select(x => new[] { x })
+						.Take(499)
+						.ToArray();
+			
+			double[][] input = inputR.Take(300).ToArray();
+			double[][] output = outputR.Take(300).ToArray();
 
 			var network = new NeuralNetwork(
 				new SimpleLayerInfo { CountNeuronsInLayer = 8 },
 				new StrictLayerInfo
 				{
 					Neurons = new[] {
-						new NeuronInfo {ActivationFunction = ActivationFunctionEnum.GiperbalTan},
-						new NeuronInfo {ActivationFunction = ActivationFunctionEnum.Gauss},
+						new NeuronInfo {ActivationFunction = ActivationFunctionEnum.Sin},
+						new NeuronInfo {ActivationFunction = ActivationFunctionEnum.Sin},
 						new NeuronInfo {ActivationFunction = ActivationFunctionEnum.GiperbalTan}
 						}
 				},
@@ -70,7 +75,7 @@ namespace Henon
 				err = teacher.RunEpoch(input, output, true);
 				if (teacher.IterationCounter % 100 == 0)
 				{
-					Console.WriteLine(err);
+					Console.WriteLine("{0:F6}  /  {1:F6}",err,network.GetAbsoluteError(inputR,outputR));
 				}
 			} while (err > 0.1);/**/
 		}

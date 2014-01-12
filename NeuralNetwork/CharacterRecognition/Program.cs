@@ -26,6 +26,7 @@ namespace CharacterRecognition
 			}
 			return vector.ToArray();
 		}
+
 		static void Main(string[] args)
 		{
 			var inputs = new[]{
